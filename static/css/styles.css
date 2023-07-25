@@ -21,9 +21,20 @@
     color: black;
     margin-bottom: 0;
 }
+.card-body a {
+    text-decoration: none;
+    color: black;
+}
 
 .card-text {
     color: #333333;
     margin-top: 0;
 }
-
+.card-categories {
+    border: none;
+    border-radius: 40px 10px;
+    background: greenyellow;
+}
+.footer {
+    height: 50px;
+}
