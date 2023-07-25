@@ -1,5 +1,41 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+  <section class="jumbotron text-center" style="background-color: darkgray">
+    <div class="container black">
+      <h1>La Dolce Vita</h1>
+      <p class="lead text-muted">Unite Flavors, Share Delights: Add Your Dish to Our Italian Culinary Realm!</p>
+      <div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-list"></i></h5><br>
+          <p class="card-text"><strong>Count of dish types: {{ num_dish_types.count }}+</strong></p>
+        </div>
+      </div>
+    </div>
 
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-pizza-slice"></i></h5><br>
+          <p class="card-text"><strong>Count of dishes: {{ num_dishes.count }}+</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-fire"></i></h5><br>
+          <p class="card-text"><strong>Count of dishes: {{ num_cookers.count }}+</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </section>
 {% endblock %}
