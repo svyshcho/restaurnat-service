@@ -1,7 +1,7 @@
-import time
+from django.views import generic
 from django.shortcuts import render
 from restaurant.models import Dish, Cook, DishType
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def index(request):
     num_dish_types = DishType.objects.all()
@@ -15,3 +15,16 @@ def index(request):
     }
 
     return render(request, "restaurant/index.html", context=context)
+
+
+class PastaListView(generic.ListView):
+    queryset = Dish.objects.filter(dish_type__name__icontains="pasta")
+    context_object_name = "pasta_list"
+    template_name = "restaurant/pasta_list.html"
+
+
+class PastaDetailView(generic.DetailView):
+    model = Dish
+    template_name = "restaurant/pasta_detail.html"
+
+

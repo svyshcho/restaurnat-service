@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Pasta recipes: </h3>
+  {% if pasta_list %}
+    <oL>
+    {% for pasta in pasta_list %}
+      <li>Pasta: <a href="{% url 'catalog:pasta-detail' pk=pasta.id %}" style="text-decoration: none">{{ pasta.name }}</a>, Price: {{ pasta.price }} </li>
+    {% endfor %}
+    </oL>
+  {% else %}
+  {% endif %}
+{% endblock %}
