@@ -38,3 +38,12 @@
 .footer {
     height: 50px;
 }
+.detail-page {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+.login-form{
+    align-items: center;
+    align-content: center;
+}

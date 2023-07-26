@@ -17,6 +17,7 @@ def index(request):
 
     return render(request, "restaurant/index.html", context=context)
 
+
 class CookerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
     template_name = "restaurant/cooker_detail.html"
@@ -30,6 +31,8 @@ class PastaListView(generic.ListView):
 
 class PastaDetailView(generic.DetailView):
     model = Dish
-    template_name = "restaurant/pasta_detail.html"
+    template_name = "restaurant/food_detail.html"
+
+
 
 
