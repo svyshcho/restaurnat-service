@@ -3,6 +3,7 @@ from django.shortcuts import render
 from restaurant.models import Dish, Cook, DishType
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 def index(request):
     num_dish_types = DishType.objects.all()
     num_dishes = Dish.objects.all()
@@ -15,6 +16,10 @@ def index(request):
     }
 
     return render(request, "restaurant/index.html", context=context)
+
+class CookerDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Cook
+    template_name = "restaurant/cooker_detail.html"
 
 
 class PastaListView(generic.ListView):

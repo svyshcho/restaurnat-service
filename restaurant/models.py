@@ -14,12 +14,11 @@ class Dish(models.Model):
     description = models.TextField(max_length=255)
     price = models.DecimalField(max_digits=2, decimal_places=1)
     dish_type = models.ForeignKey("DishType", on_delete=models.CASCADE)
-    cooks = models.ManyToManyField("Cook", related_name="cookers")
 
 
 class Cook(AbstractUser):
-    years_of_experience = models.IntegerField(default=1)
-    dishes = models.ManyToManyField("Dish", related_name="dishes")
+    years_of_experience = models.PositiveIntegerField(default=1)
+    dishes = models.ManyToManyField("Dish", related_name="cookers")
 
     class Meta:
         verbose_name = "cooker"
