@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Aperitifs recipes: </h3>
+  {% if aperitifs_list %}
+    <oL>
+    {% for aperitifs in aperitifs_list %}
+      <li>Aperitifs: <a href="{% url 'catalog:aperitifs-detail' pk=aperitifs.id %}" style="text-decoration: none">{{ aperitifs.name }}</a>, Price: {{ aperitifs.price }} </li>
+    {% endfor %}
+    </oL>
+  {% else %}
+  {% endif %}
+{% endblock %}

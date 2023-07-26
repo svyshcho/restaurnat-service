@@ -31,8 +31,59 @@ class PastaListView(generic.ListView):
 
 class PastaDetailView(generic.DetailView):
     model = Dish
-    template_name = "restaurant/food_detail.html"
+    template_name = "restaurant/pasta_detail.html"
 
 
+class PizzaListView(generic.ListView):
+    queryset = Dish.objects.filter(dish_type__name__icontains="pizza")
+    context_object_name = "pizza_list"
+    template_name = "restaurant/pizza_list.html"
 
 
+class PizzaDetailView(generic.DetailView):
+    model = Dish
+    template_name = "restaurant/pizza_detail.html"
+
+
+class AperitifsListView(generic.ListView):
+    queryset = Dish.objects.filter(dish_type__name__icontains="aperitif")
+    context_object_name = "aperitifs_list"
+    template_name = "restaurant/aperitifs_list.html"
+
+
+class AperitifsDetailView(generic.DetailView):
+    model = Dish
+    template_name = "restaurant/aperitifs_detail.html"
+
+
+class SaladListView(generic.ListView):
+    queryset = Dish.objects.filter(dish_type__name__icontains="salad")
+    context_object_name = "salads_list"
+    template_name = "restaurant/salads_list.html"
+
+
+class SaladDetailView(generic.DetailView):
+    model = Dish
+    template_name = "restaurant/salads_detail.html"
+
+
+class MainDishesListView(generic.ListView):
+    queryset = Dish.objects.filter(dish_type__name__icontains="dishes")
+    context_object_name = "dish_list"
+    template_name = "restaurant/main_dishes_list.html"
+
+
+class MainDishesDetailView(generic.DetailView):
+    model = Dish
+    template_name = "restaurant/main_dishes_detail.html"
+
+
+class DessertsListView(generic.ListView):
+    queryset = Dish.objects.filter(dish_type__name__icontains="desserts")
+    context_object_name = "desserts_list"
+    template_name = "restaurant/desserts_list.html"
+
+
+class DessertsDetailView(generic.DetailView):
+    model = Dish
+    template_name = "restaurant/desserts_detail.html"

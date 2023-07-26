@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <h3 style="text-align: center">Detail {{ dish.dish_type.name }} Page</h3>
+  <hr>
+  <div class="row justify-content-center">
+    <div class="detail-page">
+      <p><strong>Main Dish name:</strong> {{ dish.name }}</p>
+      <p><strong>Main Dish name:</strong> {{ dish.price }}</p>
+      <p><strong>Main Dish description: <br> {{ dish.description }}</strong></p>
+      {% if dish.cookers%}
+        <h5>Cookers:</h5>
+        <ul>
+        {% for cooker in dish.cookers.all %}
+          <li>{{ cooker.username }}, ({{ cooker.first_name }} {{ cooker.last_name }})</li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p>There is no cookers</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

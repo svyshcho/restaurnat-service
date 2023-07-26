@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Salads recipes: </h3>
+  {% if salads_list %}
+    <oL>
+    {% for salad in salads_list %}
+      <li>Salad: <a href="{% url 'catalog:salad-detail' pk=salad.id %}" style="text-decoration: none">{{ salad.name }}</a>, Price: {{ salad.price }} </li>
+    {% endfor %}
+    </oL>
+  {% else %}
+  {% endif %}
+{% endblock %}

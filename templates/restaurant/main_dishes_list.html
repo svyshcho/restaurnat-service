@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Main Dishes recipes: </h3>
+  {% if dish_list %}
+    <oL>
+    {% for dish in dish_list %}
+      <li>Dish: <a href="{% url 'catalog:main-dishes-detail' pk=dish.id %}" style="text-decoration: none">{{ dish.name }}</a>, Price: {{ dish.price }} </li>
+    {% endfor %}
+    </oL>
+  {% else %}
+  {% endif %}
+{% endblock %}

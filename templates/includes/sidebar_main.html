@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
-  <a class="navbar-brand" href="#"><span style="color: gold">La Dolce</span> Vita</a>
+  <a class="navbar-brand" href="{% url 'catalog:index' %}"><span style="color: gold">La Dolce</span> Vita</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,11 +20,11 @@
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="{% url 'catalog:pasta-list' %}">Pasta</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="{% url 'catalog:pizza-list' %}">Pizza</a>
+          <a class="dropdown-item" href="{% url 'catalog:aperitifs-list' %}">Aperitifs</a>
+          <a class="dropdown-item" href="{% url 'catalog:salad-list' %}">Salads</a>
+          <a class="dropdown-item" href="{% url 'catalog:main-dishes-list' %}">Main Dishes</a>
+          <a class="dropdown-item" href="{% url 'catalog:desserts-list' %}">Desserts</a>
         </div>
       </li>
     </ul>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>Pizza recipes: </h3>
+  {% if pizza_list %}
+    <oL>
+    {% for pizza in pizza_list %}
+      <li>Pizza: <a href="{% url 'catalog:pizza-detail' pk=pizza.id %}" style="text-decoration: none">{{ pizza.name }}</a>, Price: {{ pizza.price }} </li>
+    {% endfor %}
+    </oL>
+  {% else %}
+  {% endif %}
+{% endblock %}
