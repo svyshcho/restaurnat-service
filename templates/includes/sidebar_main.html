@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <a class="navbar-brand" href="{% url 'catalog:index' %}"><span style="color: gold">La Dolce</span> Vita</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'catalog:index' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'catalog:cooker-detail' pk=user.id %}">Profile</a>
+      </li>
+      {% endif %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Catalog
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'catalog:pasta-list' %}">Pasta</a>
+          <a class="dropdown-item" href="{% url 'catalog:pizza-list' %}">Pizza</a>
+          <a class="dropdown-item" href="{% url 'catalog:aperitifs-list' %}">Aperitifs</a>
+          <a class="dropdown-item" href="{% url 'catalog:salad-list' %}">Salads</a>
+          <a class="dropdown-item" href="{% url 'catalog:main-dishes-list' %}">Main Dishes</a>
+          <a class="dropdown-item" href="{% url 'catalog:desserts-list' %}">Desserts</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      {% if user.is_authenticated %}
+        <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}"><button type="button" class="btn btn-gray">Logout</button></a></li>
+      {% else %}
+        <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}"><button type="button" class="btn btn-gray">Login <i class="fa-solid fa-right-to-bracket"></i></button></a></li>
+      {% endif %}
+    </form>
+  </div>
+</nav>
